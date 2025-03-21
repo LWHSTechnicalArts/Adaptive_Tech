@@ -13,6 +13,11 @@ void wakeUp() {
 void setup() {
     Serial.begin(9600);
     pinMode(BUTTON_PIN, INPUT_PULLUP);  // Enable internal pull-up resistor
+    pinMode(12, OUTPUT);
+
+    digitalWrite(12, HIGH);
+    delay(300);
+    digitalWrite(12, LOW);
 
     if (!driver.init()) {
         Serial.println("RF Module Init Failed!");
